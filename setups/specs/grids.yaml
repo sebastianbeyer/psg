@@ -1,0 +1,23 @@
+- grid:
+    spec: NHEM-40
+    Mx: 312
+    My: 312
+    Mz: 101
+    Mbz: 21
+    zspacing: equal
+    Lz: 8000
+    Lbz: 2000
+    recomputeLatLon: false
+    periodicity: none
+
+- grid:
+    spec: GRN-40
+    Mx: 44
+    My: 76
+    Mz: 101
+    Mbz: 11
+    zspacing: equal
+    Lz: 8000
+    Lbz: 2000
+    recomputeLatLon: false
+    periodicity: none

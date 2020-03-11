@@ -1,0 +1,24 @@
+- exp:
+    spec: test
+    geometry: NHEM-21ka
+    grid: NHEM-40
+    atmo: pdd
+    ocean: pik
+    icedyn:
+      siaE: [ 1, 2, 3, 4.5, 7 ]
+    time: 50k-out100
+    output:
+
+
+- exp:
+    spec: PI-constant-50k-siaEtuning
+    geometry: NHEM-21ka
+    grid: NHEM-40
+    atmo: pdd
+    ocean: pik
+    icedyn:
+      siaE: [ 1, 2, 3, 4.5, 7 ]
+    time: 50k-out100
+    output:
+
+

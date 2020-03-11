@@ -1,0 +1,68 @@
+grids:
+- grid:
+    spec: NHEM-40
+    Mx: 312
+    My: 312
+    Mz: 101
+    Mbz: 21
+    zspacing: equal
+    Lz: 8000
+    Lbz: 2000
+
+- grid:
+    spec: GRN-40
+    Mx: 44
+    My: 76
+    Mz: 101
+    Mbz: 11
+    zspacing: equal
+    Lz: 8000
+    Lbz: 2000
+
+
+geometry:
+  NHEM-21ka:
+    netcdfin-40km: ./CESM_21ka_NHEM_40km.nc
+    netcdfin-20km: ./CESM_21ka_NHEM_20km.nc
+  NHEM-00ka:
+    netcdfin-20km: ./CESM_00ka_NHEM_40km.nc
+
+  GRN:
+    netcdfin-40km: ./ERA5_GRN_40km.nc
+    netcdfin-20km: ./ERA5_GRN_20km.nc
+
+atmospheres:
+- atmo:
+    spec: niu
+    lapseRate: 5
+    pddPrecipRain: 275.15
+    pddPrecipSnow: 273.15
+    pddFacIce: 8e-3
+    pddFacSnow: 3e-3
+    pddRefreeze: 0.6
+
+oceans:
+- ocean:
+    spec: niu
+    calvingThickThresh: 200
+    frontRetreatFile: "frontFile.nc"
+    oceanMeltFactor: 1e-2
+
+icedynamics:
+- icedynamic:
+    spec: niu
+    siaE: 5
+    ssaE: 1
+    pseudoPlasticQ: 0.1
+    effFracOverburden: 0.01
+
+outputs:
+- output:
+    spec: default
+    tsFile: tsFile.nc
+    tsTimes: yearly
+    exFile: exFile.nc
+    exTimes: 100
+    extraVars: thk
+    outFile: outFile.nc
+    config: pismoverride.nc
