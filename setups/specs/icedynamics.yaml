@@ -1,0 +1,23 @@
+- icedynamic:
+    spec: niu2019
+    stressBalance: ssa+sia
+    siaE: 5
+    ssaE: 1
+    pseudoPlasticQ: 0.1
+    effFracOverburden: 0.01
+
+- icedynamic:
+    spec: hindcasting
+    stressBalance: ssa+sia
+    siaE: 3
+    ssaE: 1
+    pseudoPlasticQ: 0.25
+    effFracOverburden: 0.95
+
+- icedynamic:
+    spec: nature-highres
+    stressBalance: ssa+sia
+    siaE: 1.25
+    ssaE: 1
+    pseudoPlasticQ: 0.6
+    effFracOverburden: 0.02

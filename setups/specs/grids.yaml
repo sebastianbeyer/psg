@@ -4,10 +4,10 @@
     My: 312
     Mz: 101
     Mbz: 21
-    zspacing: equal
+    z_spacing: equal
     Lz: 8000
     Lbz: 2000
-    recomputeLatLon: false
+    grid.recompute_longitude_and_latitude: false
     periodicity: none
 
 - grid:
@@ -16,8 +16,8 @@
     My: 76
     Mz: 101
     Mbz: 11
-    zspacing: equal
+    z_spacing: equal
     Lz: 8000
     Lbz: 2000
-    recomputeLatLon: false
+    grid.recompute_longitude_and_latitude: false
     periodicity: none

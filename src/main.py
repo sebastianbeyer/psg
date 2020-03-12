@@ -23,10 +23,12 @@ args = parser.parse_args()
 
 grids = spec.Spec('grid', paths.gridsfile)
 times = spec.Spec('time', paths.timesfile)
+icedyns = spec.Spec('icedynamic', paths.icedynfile)
 exps = spec.Spec('exp', paths.expsfile)
 
 exp = exps.findSpec(args.exp)
 time = times.findSpec(exp['time'])
 grid = grids.findSpec(exp['grid'])
+icedyn = icedyns.findSpec(exp['icedynamic'])
 
-exp = experiment.Experiment(exp, time, grid)
+exp = experiment.Experiment(exp, time, grid, icedyn)

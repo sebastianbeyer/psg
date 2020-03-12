@@ -13,4 +13,5 @@ setups_path = os.path.join(psg_prefix, "setups")
 
 gridsfile = os.path.join(setups_path, 'specs', 'grids.yaml')
 timesfile = os.path.join(setups_path, 'specs', 'times.yaml')
+icedynfile = os.path.join(setups_path, 'specs', 'icedynamics.yaml')
 expsfile = os.path.join(setups_path, 'experiments', 'base.yaml')

@@ -7,11 +7,12 @@ class Experiment():
     """
     Class for a running experiment that can be dumped out as a shell file
     """
-    def __init__(self, exp, time, grid):
+    def __init__(self, exp, time, grid, icedyn):
         self.spec = exp['spec']
         self.exp = exp
         self.time = time
         self.grid = grid
+        self.icedyn = icedyn
         self.timestamp = asctime()
 
         setup = {
@@ -20,16 +21,6 @@ class Experiment():
             'do_glacialIndex': True,
             'do_bootstrap': True,
             'do_sealevel': True,
-        }
-
-        iceDynamics = {
-            'siaE': 5,
-            'ssaE': 1,
-            'stressBalance': 'ssa+sia',
-            'topgToPhi': '5,30,-100,700',
-            'pseudoPlasticQ': 0.5,
-            'tillFracOver': 0.01,
-            'hydroTillWatMax': 1,
         }
 
         ocean = {
@@ -45,7 +36,7 @@ class Experiment():
             'setup': setup,
             'grid': grid,
             'time': time,
-            'iceDynamics': iceDynamics,
+            'iceDynamics': icedyn,
             'ocean': ocean,
         }
 
@@ -58,10 +49,11 @@ class Experiment():
         template = env.get_template(templateName)
         template.stream(self.exp_data).dump(out_file)
 
-    # def _getFragements(self):
-    #     keys = [
-    #         'geometry',
-    #         'grid',
-    #     ]
-    #     for key in keys:
-    #         print(key)
+    def alternateWrite(self, out_file):
+        """
+        Write each separately
+        """
+        for key, value in self.grid.items():
+            if key != 'spec':
+                line = "-{} {} \\".format(key, value)
+                print(line)

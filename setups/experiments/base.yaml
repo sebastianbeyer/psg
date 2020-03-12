@@ -4,8 +4,7 @@
     grid: NHEM-40
     atmo: pdd
     ocean: pik
-    icedyn:
-      siaE: [ 1, 2, 3, 4.5, 7 ]
+    icedynamic: hindcasting
     time: 50k-out100
     output:
 
@@ -16,7 +15,7 @@
     grid: NHEM-40
     atmo: pdd
     ocean: pik
-    icedyn:
+    icedynamic:
       siaE: [ 1, 2, 3, 4.5, 7 ]
     time: 50k-out100
     output:
