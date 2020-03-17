@@ -8,8 +8,8 @@ psg_prefix = os.path.dirname(os.path.dirname(psg_file))
 # print(psg_prefix)
 spack_src_path = os.path.join(psg_prefix, "src")
 
-templates_path = os.path.join(psg_prefix, "templates")
 setups_path = os.path.join(psg_prefix, "setups")
+templates_path = os.path.join(setups_path, "templates")
 
 gridsfile = os.path.join(setups_path, 'specs', 'grids.yaml')
 timesfile = os.path.join(setups_path, 'specs', 'times.yaml')
