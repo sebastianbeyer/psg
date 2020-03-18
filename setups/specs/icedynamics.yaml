@@ -1,4 +1,8 @@
 - icedynamic:
+    spec: default
+    stressBalance: ssa+sia
+
+- icedynamic:
     spec: niu2019
     stressBalance: ssa+sia
     siaE: 5
