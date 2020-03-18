@@ -32,7 +32,7 @@ class Spec():
                 return spec
         return 'none'
 
-    def findSpec(self, identifier):
+    def _findSpec(self, identifier):
         spec = next(
             (item
              for item in self.data if item['spec'] == identifier),
@@ -41,5 +41,14 @@ class Spec():
             raise KeyError("spec identifier {} not found".format(identifier))
         else:
             return spec
+
+    def get_spec(self, identifier):
+        spec = self._findSpec(identifier)
+        if self.default != 'none':
+            # preserve spec name
+            orig_specname = spec['spec']
+            spec.update(self.default)
+            spec['spec'] = 'default -> ' + orig_specname
+        return spec
 
 

@@ -37,11 +37,10 @@ args = parser.parse_args()
 args.func(args)
 
 
-
-exp = exps.findSpec(args.exp)
-time = times.findSpec(exp['time'])
-grid = grids.findSpec(exp['grid'])
-icedyn = icedyns.findSpec(exp['icedynamic'])
+exp = exps.get_spec(args.exp)
+time = times.get_spec(exp['time'])
+grid = grids.get_spec(exp['grid'])
+icedyn = icedyns.get_spec(exp['icedynamic'])
 
 # assemble
 exp = experiment.Experiment(exp, time, grid, icedyn)
