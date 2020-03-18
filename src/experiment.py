@@ -53,7 +53,8 @@ class Experiment():
         """
         Write each separately
         """
-        for key, value in self.grid.items():
-            if key != 'spec':
-                line = "-{} {} \\".format(key, value)
-                print(line)
+        for submodel in [self.grid, self.time, self.icedyn]:
+            for key, value in submodel.items():
+                if key != 'spec':
+                    line = "-{} {} \\".format(key, value)
+                    print(line)
