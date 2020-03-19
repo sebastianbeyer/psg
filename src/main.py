@@ -20,6 +20,7 @@ sys.path.insert(0, spack_src_path)
 grids = spec.Spec('grid', paths.gridsfile)
 times = spec.Spec('time', paths.timesfile)
 icedyns = spec.Spec('icedynamic', paths.icedynfile)
+oceans = spec.Spec('ocean', paths.oceansfile)
 exps = spec.Spec('exp', paths.expsfile)
 
 def listCmd(args):
@@ -41,6 +42,7 @@ exp = exps.get_spec(args.exp)
 time = times.get_spec(exp['time'])
 grid = grids.get_spec(exp['grid'])
 icedyn = icedyns.get_spec(exp['icedynamic'])
+ocean = oceans.get_spec(exp['ocean'])
 
 # assemble
-exp = experiment.Experiment(exp, time, grid, icedyn)
+exp = experiment.Experiment(exp, time, grid, icedyn, ocean)

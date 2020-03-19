@@ -7,12 +7,13 @@ class Experiment():
     """
     Class for a running experiment that can be dumped out as a shell file
     """
-    def __init__(self, exp, time, grid, icedyn):
+    def __init__(self, exp, time, grid, icedyn, ocean):
         self.spec = exp['spec']
         self.exp = exp
         self.time = time
         self.grid = grid
         self.icedyn = icedyn
+        self.ocean = ocean
         self.timestamp = asctime()
 
         setup = {
@@ -53,7 +54,7 @@ class Experiment():
         """
         Write each separately
         """
-        for submodel in [self.grid, self.time, self.icedyn]:
+        for submodel in [self.grid, self.time, self.icedyn, self.ocean]:
             for key, value in submodel.items():
                 if key != 'spec':
                     line = "-{} {} \\".format(key, value)

@@ -3,7 +3,7 @@
     geometry: NHEM-21ka
     grid: NHEM-40
     atmo: pdd
-    ocean: pik
+    ocean: sealevel
     icedynamic: hindcasting
     time: 50k-out100
     output:

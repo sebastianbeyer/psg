@@ -1,0 +1,8 @@
+- ocean:
+    spec: default
+
+    
+- ocean:
+    spec: sealevel
+    sealevelFile: /dataset/sealevel.nc
+    
