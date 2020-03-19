@@ -16,30 +16,21 @@ class Experiment():
         self.ocean = ocean
         self.timestamp = asctime()
 
-        setup = {
-            'do_atmGiven': False,
-            'do_pdd': True,
-            'do_glacialIndex': True,
-            'do_bootstrap': True,
-            'do_sealevel': True,
-        }
+        # 'exp_name': self.spec,
+        # 'timestamp': asctime(),
+        # 'netcdfIn': "./input.nc",
+        # 'n_procs': 5,
+        # 'config_override': "./config.nc",
+        # 'setup': setup,
 
-        ocean = {
-            'sealevelFile': 'delta_sl.nc',
-        }
-
-        self.exp_data = {
-            'exp_name': self.spec,
-            'timestamp': asctime(),
-            'netcdfIn': "./input.nc",
-            'n_procs': 5,
-            'config_override': "./config.nc",
-            'setup': setup,
-            'grid': grid,
-            'time': time,
-            'iceDynamics': icedyn,
-            'ocean': ocean,
-        }
+    def __str__(self):
+        string = """
+        Experiment: {}
+        Grid:       {}
+        Icedynamic  {}
+        Ocean:      {}
+        """.format(self.spec, self.grid['spec'], self.icedyn['spec'], self.ocean['spec'])
+        return string
 
     def write_to_file(self, out_file, templateName):
         loader = jinja2.FileSystemLoader(searchpath=paths.templates_path)
