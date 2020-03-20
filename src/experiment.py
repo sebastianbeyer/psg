@@ -20,12 +20,22 @@ class Experiment():
 
         self.version = version.git_version()
 
-        # 'exp_name': self.spec,
-        # 'timestamp': asctime(),
-        # 'netcdfIn': "./input.nc",
-        # 'n_procs': 5,
-        # 'config_override': "./config.nc",
-        # 'setup': setup,
+        output = {
+                'base': './outputbase.nc',
+                'ts_file': './ts_out.nc',
+                'extra_file': './ex_out.nc',
+                'extra_vars': 'velsurf_mag,mask,thk,topg,usurf,climatic_mass_balance',
+                }
+        self.basedata = {
+                'timestamp': asctime(),
+                'psg_revision': self.version,
+                'exp_name': self.spec,
+                'n_procs': 5,
+                'netcdfIn': "./input.nc",
+                'config_override': "./config.nc",
+                'bootstrap': 'yes',
+                'output': output,
+                }
 
     def __str__(self):
         string = """
@@ -45,7 +55,7 @@ class Experiment():
                                  undefined=jinja2.StrictUndefined)
 
         template = env.get_template(templateName)
-        template.stream(self.exp_data).dump(out_file)
+        template.stream(self.basedata).dump(out_file)
 
     def alternateWrite(self, out_file):
         """
