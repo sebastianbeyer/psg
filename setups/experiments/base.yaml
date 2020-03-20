@@ -1,23 +1,31 @@
 - exp:
     spec: test
+    netcdf_input: /datasets/blabla.nc
+    bootstrap: yes
     geometry: NHEM-21ka
     grid: NHEM-40
-    atmo: pdd
-    ocean: sealevel
+    ocean: sealevel_change
+    climate: pdd-glacial-index
     icedynamic: hindcasting
     time: 50k-out100
     output:
+    n_procs: 12
+    config_override: ./pism_conf_override.nc
 
 
 - exp:
     spec: PI-constant-50k-siaEtuning
+    netcdf_input: /datasets/blabla.nc
+    bootstrap: yes
     geometry: NHEM-21ka
     grid: NHEM-40
-    atmo: pdd
     ocean: pik
+    climate: pdd-glacial-index
     icedynamic:
-      siaE: [ 1, 2, 3, 4.5, 7 ]
+      siaE: [ 1, 2, 3, 4.5, 7 ] # not yet working
     time: 50k-out100
     output:
+    n_procs: 12
+    config_override: ./pism_conf_override.nc
 
 

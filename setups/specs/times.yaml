@@ -2,12 +2,12 @@
     spec: 120k-out100
     ys: -120000
     ye: 0
-    ts: -120000:10:0
-    extra: -120000:100:0
+    ts_times: '-120000:10:0'
+    extra_times: '-120000:100:0'
 
 - time:
     spec: 50k-out100
     ys: -50000
     ye: 0
-    ts: -50000:10:0
-    extra: -120000:100:0
+    ts_times: '-50000:10:0'
+    extra_times: '-120000:100:0'

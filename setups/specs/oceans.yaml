@@ -3,6 +3,11 @@
 
     
 - ocean:
-    spec: sealevel
-    sealevelFile: /dataset/sealevel.nc
+    spec: sealevel_change
+    sea_level: constant,delta_sl
+    ocean_delta_sl_file: /dataset/sealevel.nc
+
+- ocean:
+    spec: NHEM-40-frontretreat
+    front_retreat_file: /dataset/NHEM_ocean_kill_40km.nc
     

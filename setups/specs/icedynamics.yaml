@@ -1,24 +1,30 @@
 - icedynamic:
     spec: default
     stressBalance: ssa+sia
+    tauc_slippery_grounding_lines: yes
+    topg_to_phi: 5,40,-700,700
 
 - icedynamic:
     spec: niu2019
     siaE: 5
     ssaE: 1
-    pseudoPlasticQ: 0.1
-    effFracOverburden: 0.01
+    pseudo_plastic: yes
+    pseudo_plastic_q: 0.1
+    till_effective_fraction_overburden: 0.01
+    hydrology_tillwat_max: 1
 
 - icedynamic:
     spec: hindcasting
     siaE: 3
     ssaE: 1
+    pseudo_plastic: yes
     pseudoPlasticQ: 0.25
-    effFracOverburden: 0.95
+    till_effective_fraction_overburden: 0.95
 
 - icedynamic:
     spec: nature-highres
     siaE: 1.25
     ssaE: 1
+    pseudo_plastic: yes
     pseudoPlasticQ: 0.6
-    effFracOverburden: 0.02
+    till_effective_fraction_overburden: 0.02

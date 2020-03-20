@@ -1,20 +1,24 @@
 import jinja2
 import paths
 from time import asctime
+import version
 
 
 class Experiment():
     """
     Class for a running experiment that can be dumped out as a shell file
     """
-    def __init__(self, exp, time, grid, icedyn, ocean):
+    def __init__(self, exp, time, grid, icedyn, ocean, climate):
         self.spec = exp['spec']
         self.exp = exp
         self.time = time
         self.grid = grid
         self.icedyn = icedyn
         self.ocean = ocean
+        self.climate = climate
         self.timestamp = asctime()
+
+        self.version = version.git_version()
 
         # 'exp_name': self.spec,
         # 'timestamp': asctime(),
@@ -25,11 +29,13 @@ class Experiment():
 
     def __str__(self):
         string = """
-        Experiment: {}
-        Grid:       {}
-        Icedynamic  {}
-        Ocean:      {}
-        """.format(self.spec, self.grid['spec'], self.icedyn['spec'], self.ocean['spec'])
+        PSG-Version: {}
+        Experiment:  {}
+        Grid:        {}
+        Icedynamic   {}
+        Ocean:       {}
+        Climate:     {}
+        """.format(self.version, self.spec, self.grid['spec'], self.icedyn['spec'], self.ocean['spec'], self.climate['spec'])
         return string
 
     def write_to_file(self, out_file, templateName):
@@ -45,7 +51,7 @@ class Experiment():
         """
         Write each separately
         """
-        for submodel in [self.grid, self.time, self.icedyn, self.ocean]:
+        for submodel in [self.grid, self.time, self.icedyn, self.ocean, self.climate]:
             for key, value in submodel.items():
                 if key != 'spec':
                     line = "-{} {} \\".format(key, value)
