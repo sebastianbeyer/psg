@@ -63,6 +63,7 @@ class Experiment():
         """
         Write each separately
         """
+        print('Writing runfile to {}'.format(out_file))
         with open(out_file, 'a') as f:
             for submodel in [self.grid, self.time, self.icedyn, self.ocean, self.climate]:
                 for key, value in submodel.items():
