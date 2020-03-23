@@ -17,3 +17,5 @@ icedynfile = os.path.join(setups_path, 'specs', 'icedynamics.yaml')
 oceansfile = os.path.join(setups_path, 'specs', 'oceans.yaml')
 climatesfile = os.path.join(setups_path, 'specs', 'climates.yaml')
 expsfile = os.path.join(setups_path, 'experiments', 'base.yaml')
+
+exp_envs_path = os.path.join(psg_prefix, 'experiments')

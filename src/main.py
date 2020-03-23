@@ -7,6 +7,7 @@ import argparse
 import paths
 import spec
 import experiment
+import expenv
 import version
 
 # get location of this stuff and add the paths, so no install is necessary
@@ -40,7 +41,9 @@ def generate_command(args):
     # assemble
     exp = experiment.Experiment(exp, time, grid, icedyn, ocean, climate)
     print(exp)
-    exp.write_to_file('bla.sh', 'runpism1.2.sh')
+
+    expEnv = expenv.ExperimentEnvironment(exp)
+    exp.write_to_file(expEnv.runfile, 'runpism1.2.sh')
 
 parser = argparse.ArgumentParser(description='Generate pism runs')
 # parser.add_argument('exp', help='name of the experiment', type=str)
