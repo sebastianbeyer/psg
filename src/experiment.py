@@ -57,12 +57,16 @@ class Experiment():
         template = env.get_template(templateName)
         template.stream(self.basedata).dump(out_file)
 
-    def alternateWrite(self, out_file):
+        self._append_options(out_file)
+
+    def _append_options(self, out_file):
         """
         Write each separately
         """
-        for submodel in [self.grid, self.time, self.icedyn, self.ocean, self.climate]:
-            for key, value in submodel.items():
-                if key != 'spec':
-                    line = "-{} {} \\".format(key, value)
-                    print(line)
+        with open(out_file, 'a') as f:
+            for submodel in [self.grid, self.time, self.icedyn, self.ocean, self.climate]:
+                for key, value in submodel.items():
+                    if key != 'spec':
+                        line = "-{} {} \\".format(key, value)
+                        print(line)
+                        f.write('  ' + line + '\n')
