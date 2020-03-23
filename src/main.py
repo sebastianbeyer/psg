@@ -28,24 +28,34 @@ exps = spec.Spec('exp', paths.expsfile)
 def listCmd(args):
     print(args)
 
+def generate_command(args):
+    # load the fragments from the experiment spec
+    exp = exps.get_spec(args.exp)
+    time = times.get_spec(exp['time'])
+    grid = grids.get_spec(exp['grid'])
+    icedyn = icedyns.get_spec(exp['icedynamic'])
+    ocean = oceans.get_spec(exp['ocean'])
+    climate = climates.get_spec(exp['climate'])
+
+    # assemble
+    exp = experiment.Experiment(exp, time, grid, icedyn, ocean, climate)
+    print(exp)
+    exp.write_to_file('bla.sh', 'runpism1.2.sh')
+
 parser = argparse.ArgumentParser(description='Generate pism runs')
-parser.add_argument('exp', help='name of the experiment', type=str)
+# parser.add_argument('exp', help='name of the experiment', type=str)
 
 subparsers = parser.add_subparsers()
+
 parser_list = subparsers.add_parser('list')
 parser_list.add_argument('name')
 parser_list.set_defaults(func=listCmd)
+
+parser_generate = subparsers.add_parser('generate')
+parser_generate.add_argument('exp')
+parser_generate.set_defaults(func=generate_command)
 
 args = parser.parse_args()
 args.func(args)
 
 
-exp = exps.get_spec(args.exp)
-time = times.get_spec(exp['time'])
-grid = grids.get_spec(exp['grid'])
-icedyn = icedyns.get_spec(exp['icedynamic'])
-ocean = oceans.get_spec(exp['ocean'])
-climate = climates.get_spec(exp['climate'])
-
-# assemble
-exp = experiment.Experiment(exp, time, grid, icedyn, ocean, climate)
