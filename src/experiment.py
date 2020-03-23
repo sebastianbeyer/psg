@@ -68,5 +68,5 @@ class Experiment():
                 for key, value in submodel.items():
                     if key != 'spec':
                         line = "-{} {} \\".format(key, value)
-                        print(line)
+                        # print(line)
                         f.write('  ' + line + '\n')
