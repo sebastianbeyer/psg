@@ -1,3 +1,4 @@
+import os
 import jinja2
 import paths
 from time import asctime
@@ -21,9 +22,9 @@ class Experiment():
         self.version = version.git_version()
 
         output = {
-                'base': './outputbase.nc',
-                'ts_file': './ts_out.nc',
-                'extra_file': './ex_out.nc',
+                'base': os.path.join(paths.exp_envs_path, self.spec, self.spec + '.nc', ),
+                'ts_file': os.path.join(paths.exp_envs_path, self.spec, 'ts_' + self.spec + '.nc', ),
+                'extra_file': os.path.join(paths.exp_envs_path, self.spec, 'ex_' + self.spec + '.nc', ),
                 'extra_vars': 'velsurf_mag,mask,thk,topg,usurf,climatic_mass_balance',
                 }
         self.basedata = {
