@@ -2,9 +2,9 @@
     spec: default
 
 - ocean:
-    -spec: pik-niu
-    -ocean: pik
-    -meltfactor_pik: 0.01
+    spec: pik-niu
+    ocean: pik
+    meltfactor_pik: 0.01
     
 - ocean:
     spec: sealevel_change
