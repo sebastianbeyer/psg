@@ -15,3 +15,7 @@
     spec: NHEM-40-frontretreat
     front_retreat_file: /dataset/NHEM_ocean_kill_40km.nc
     
+- ocean:
+    spec: calving-std
+    calving: eigen_calving,thickness_calving
+    thickness_calving_threshold: 200

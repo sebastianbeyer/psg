@@ -13,11 +13,6 @@ mpiexec -n {{ n_procs }} --use-hwthread-cpus pismr \
   -config_override {{ config_override }} \
   -timestep_hit_multiplies 1 \
   -bootstrap {{ bootstrap }} \
-{% block calving %}
-  -calving eigen_calving,thickness_calving  \
-  -thickness_calving_threshold 200 \
-{% endblock %}
-  -front_retreat_file ./NHEM_ocean_kill_40km.nc \
 {% block output %}
   -o {{ output.base }} \
   -ts_file {{ output.ts_file }} \

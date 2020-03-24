@@ -31,22 +31,41 @@ class Experiment():
                 'timestamp': asctime(),
                 'psg_revision': self.version,
                 'exp_name': self.spec,
-                'n_procs': 5,
-                'netcdfIn': "./input.nc",
-                'config_override': "./config.nc",
-                'bootstrap': 'yes',
+                'n_procs': self.exp['n_procs'],
+                'netcdfIn': self.exp['netcdf_input'],
+                'config_override': self.exp['config_override'],
+                'bootstrap': self.exp['bootstrap'],
                 'output': output,
                 }
 
     def __str__(self):
         string = """
-        PSG-Version: {}
-        Experiment:  {}
-        Grid:        {}
-        Icedynamic   {}
-        Ocean:       {}
-        Climate:     {}
-        """.format(self.version, self.spec, self.grid['spec'], self.icedyn['spec'], self.ocean['spec'], self.climate['spec'])
+        Basics:
+            Experiment:      {}
+            Input Netcdf:    {}
+            Bootstrap:       {}
+            Config override: {}
+            Processors:      {}
+            PSG-Version:     {}
+        Fragments:
+            Grid:        {}
+            Icedynamic   {}
+            Ocean:       {}
+            Climate:     {}
+            Time:        {}
+        """.format(
+                self.spec,
+                self.basedata['netcdfIn'],
+                self.basedata['bootstrap'],
+                self.basedata['config_override'],
+                self.basedata['n_procs'],
+                self.version,
+                self.grid['spec'],
+                self.icedyn['spec'],
+                self.ocean['spec'],
+                self.climate['spec'],
+                self.time['spec'],
+                )
         return string
 
     def write_to_file(self, out_file, templateName):
