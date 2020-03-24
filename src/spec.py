@@ -16,6 +16,12 @@ class Spec():
     def __str__(self):
         return json.dumps(self.data, indent=4)
 
+    def print_overview(self):
+        print("""
+  Available Experiments
+""")
+        for exp in self.data:
+            print("  {}".format(exp['spec']))
 
 
     def _load_specs(self, specfile):
@@ -28,7 +34,7 @@ class Spec():
     def _maybe_load_defaults(self):
         for spec in self.data:
             if spec['spec'] == 'default':
-                print('found default!')
+                # print('found default!')
                 return spec
         return 'none'
 

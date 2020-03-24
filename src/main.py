@@ -27,7 +27,9 @@ climates = spec.Spec('climate', paths.climatesfile)
 exps = spec.Spec('exp', paths.expsfile)
 
 def listCmd(args):
-    print(args)
+    if args.type == 'exps':
+        exps.print_overview()
+       # print(exps)
 
 def generate_command(args):
     # load the fragments from the experiment spec
@@ -51,7 +53,7 @@ parser = argparse.ArgumentParser(description='Generate pism runs')
 subparsers = parser.add_subparsers()
 
 parser_list = subparsers.add_parser('list')
-parser_list.add_argument('name')
+parser_list.add_argument('type', choices=['exps','sub'])
 parser_list.set_defaults(func=listCmd)
 
 parser_generate = subparsers.add_parser('generate')
