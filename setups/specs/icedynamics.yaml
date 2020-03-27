@@ -28,3 +28,12 @@
     pseudo_plastic: yes
     pseudoPlasticQ: 0.6
     till_effective_fraction_overburden: 0.02
+
+- icedynamic:
+    spec: vary_siaE
+    siaE: [ 1, 2, 3, 4.5, 7 ] # not yet working
+    ssaE: 1
+    pseudo_plastic: yes
+    pseudoPlasticQ: 0.6
+    till_effective_fraction_overburden: 0.02
+

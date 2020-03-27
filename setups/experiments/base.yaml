@@ -18,10 +18,9 @@
     bootstrap: yes
     geometry: NHEM-21ka
     grid: NHEM-40
-    ocean: pik
+    ocean: pik-niu
     climate: pdd-glacial-index
-    icedynamic:
-      siaE: [ 1, 2, 3, 4.5, 7 ] # not yet working
+    icedynamic: vary_siaE
     time: 50k-out100
     n_procs: 12
     config_override: ./pism_conf_override.nc
