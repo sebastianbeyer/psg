@@ -31,7 +31,7 @@
 
 - icedynamic:
     spec: param-study-siaE
-    siaE: [ 1, 2, 3, 4.5, 7 ] # not yet working
+    siaE: [ 1, 2, 3, 4.5, 7 ]
     ssaE: 1
     pseudo_plastic: yes
     pseudoPlasticQ: 0.25
