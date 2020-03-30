@@ -11,18 +11,14 @@
     n_procs: 12
     config_override: ./pism_conf_override.nc
 
-
-- exp:
-    spec: PI-constant-50k-siaEtuning
-    netcdf_input: /datasets/blabla.nc
+-exp:
+    spec: LGM-NHEM-40km-constant-siaEtuning
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_21ka_NHEM_40km.nc
     bootstrap: yes
-    geometry: NHEM-21ka
     grid: NHEM-40
-    ocean: pik-niu
-    climate: pdd-glacial-index
-    icedynamic: vary_siaE
+    ocean: normal
+    climate: pdd-std-with-sd
+    icedynamic: param-study-siaE
     time: 50k-out100
-    n_procs: 12
-    config_override: ./pism_conf_override.nc
-
-
+    n_procs: 32
+    config_override: /work/sbeyer/PISM_runs/pism_config.nc

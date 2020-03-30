@@ -9,15 +9,16 @@
     surface.pdd.refreeze: 0.6
 
 - climate:
-    spec: pdd-std-with-sd-example
+    spec: pdd-std-with-sd
     temp_lapse_rate: 5
+    atmosphere_lapse_rate_file: /mnt/wrk4/sbeyer/datasets/cesm/CESM_21ka_NHEM_40km_refHeightOnly.nc
     surface: pdd
     surface.pdd.air_temp_all_precip_as_rain: 275.15
     surface.pdd.air_temp_all_precip_as_snow: 273.15
     surface.pdd.factor_ice: 0.0088
     surface.pdd.factor_snow: 0.0033
     surface.pdd.refreeze: 0.6
-    pdd_sd_file: /pdd_sd_file.nc
+    pdd_sd_file: /mnt/wrk4/sbeyer/datasets/cesm/CESM_21ka_NHEM_40km.nc
     pdd_sd_period: 1
 
 
