@@ -11,7 +11,7 @@
     n_procs: 12
     config_override: ./pism_conf_override.nc
 
--exp:
+- exp:
     spec: LGM-NHEM-40km-constant-siaEtuning
     netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_21ka_NHEM_40km.nc
     bootstrap: yes
