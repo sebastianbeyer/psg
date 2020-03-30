@@ -1,4 +1,5 @@
 import os
+import stat
 import jinja2
 import paths
 from time import asctime
@@ -91,6 +92,7 @@ class Experiment():
         template.stream(self.basedata).dump(out_file)
 
         self._append_options(out_file)
+        self._make_file_executable(out_file)
 
     def _write_to_file_multi(self, out_file, templateName, key, val):
         """Write multiple files (parameter study)"""
@@ -131,7 +133,12 @@ class Experiment():
 
             template.stream(self.basedata).dump(out_file_multi)
             self._append_options(out_file_multi)
+            self._make_file_executable(out_file_multi)
 
+    def _make_file_executable(self, out_file):
+        """Need to read stats first to just add"""
+        st = os.stat(out_file)
+        os.chmod(out_file, st.st_mode | stat.S_IEXEC)
 
     def _append_options(self, out_file):
         """
