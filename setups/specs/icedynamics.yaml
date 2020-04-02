@@ -6,8 +6,8 @@
 
 - icedynamic:
     spec: niu2019
-    siaE: 5
-    ssaE: 1
+    sia_e: 5
+    ssa_e: 1
     pseudo_plastic: yes
     pseudo_plastic_q: 0.1
     till_effective_fraction_overburden: 0.01
@@ -15,25 +15,25 @@
 
 - icedynamic:
     spec: hindcasting
-    siaE: 3
-    ssaE: 1
+    sia_e: 3
+    ssa_e: 1
     pseudo_plastic: yes
-    pseudoPlasticQ: 0.25
+    pseudo_plastic_q: 0.25
     till_effective_fraction_overburden: 0.95
 
 - icedynamic:
     spec: nature-highres
-    siaE: 1.25
-    ssaE: 1
+    sia_e: 1.25
+    ssa_e: 1
     pseudo_plastic: yes
-    pseudoPlasticQ: 0.6
+    pseudo_plastic_q: 0.6
     till_effective_fraction_overburden: 0.02
 
 - icedynamic:
     spec: param-study-siaE
-    siaE: [ 1, 2, 3, 4.5, 7 ]
-    ssaE: 1
+    sia_e: [ 1, 2, 3, 4.5, 7 ]
+    ssa_e: 1
     pseudo_plastic: yes
-    pseudoPlasticQ: 0.25
+    pseudo_plastic_q: 0.25
     till_effective_fraction_overburden: 0.02
 
