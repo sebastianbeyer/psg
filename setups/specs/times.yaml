@@ -22,3 +22,5 @@
     ye: 0
     ts_times: '-1:daily:0'
     extra_times: '-1:monthly:0'
+    test_climate_models: yes
+    no_mass: yes
