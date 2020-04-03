@@ -54,6 +54,7 @@ class Spec():
             # preserve spec name
             orig_specname = spec['spec']
             self.default.update(spec)
+            spec = self.default
             spec['spec'] = 'default -> ' + orig_specname
         return spec
 
