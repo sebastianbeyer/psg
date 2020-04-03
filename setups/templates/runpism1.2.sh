@@ -17,5 +17,4 @@ mpiexec -n {{ n_procs }} --use-hwthread-cpus pismr \
   -o {{ output.base }} \
   -ts_file {{ output.ts_file }} \
   -extra_file {{ output.extra_file }} \
-  -extra_vars {{ output.extra_vars }} \
 {% endblock %}

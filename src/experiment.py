@@ -29,7 +29,6 @@ class Experiment():
                     self.spec, 'ts_' + self.spec + '.nc', ),
                 'extra_file': os.path.join(paths.exp_envs_path,
                     self.spec, 'ex_' + self.spec + '.nc', ),
-                'extra_vars': 'velsurf_mag,mask,thk,topg,usurf,climatic_mass_balance,ice_surface_temp,_air_temp_snapshot',
                 }
         self.basedata = {
                 'timestamp': asctime(),
@@ -103,7 +102,7 @@ class Experiment():
         template = env.get_template(templateName)
 
         filename_no_ext, _ = os.path.splitext(out_file)
-        print(filename_no_ext)
+        # print(filename_no_ext)
         for value in val:
             print(value)
             out_file_multi = filename_no_ext + "_" + key + "_" + str(value) + ".sh"
@@ -125,7 +124,6 @@ class Experiment():
                       'extra_file': os.path.join(paths.exp_envs_path,
                           self.spec,
                           'ex_' + self.spec + "_" + key + "_" + str(value) + '.nc', ),
-                      'extra_vars': 'velsurf_mag,mask,thk,topg,usurf,climatic_mass_balance',
                       }
             self.basedata['output'] = output
 
