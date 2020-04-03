@@ -1,4 +1,8 @@
 - time:
+    spec: default
+    extra_vars: 'thk,usurf,topg,velsurf_mag,mask,climatic_mass_balance,temppabase,ice_surface_temp,air_temp_snapshot'
+
+- time:
     spec: 120k-out100
     ys: -120000
     ye: 0
@@ -11,3 +15,10 @@
     ye: 0
     ts_times: '-50000:10:0'
     extra_times: '-50000:100:0'
+
+- time:
+    spec: test-oneyear
+    ys: -1
+    ye: 0
+    ts_times: '-1:daily:0'
+    extra_times: '-1:monthly:0'
