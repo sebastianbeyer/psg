@@ -53,7 +53,7 @@ class Spec():
         if self.default != 'none':
             # preserve spec name
             orig_specname = spec['spec']
-            spec.update(self.default)
+            self.default.update(spec)
             spec['spec'] = 'default -> ' + orig_specname
         return spec
 
