@@ -29,7 +29,7 @@ class Experiment():
                     self.spec, 'ts_' + self.spec + '.nc', ),
                 'extra_file': os.path.join(paths.exp_envs_path,
                     self.spec, 'ex_' + self.spec + '.nc', ),
-                'extra_vars': 'velsurf_mag,mask,thk,topg,usurf,climatic_mass_balance',
+                'extra_vars': 'velsurf_mag,mask,thk,topg,usurf,climatic_mass_balance,ice_surface_temp,_air_temp_snapshot',
                 }
         self.basedata = {
                 'timestamp': asctime(),
