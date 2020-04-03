@@ -30,7 +30,7 @@
     grid: NHEM-40
     ocean: normal
     climate: pdd-std-with-sd
-    icedynamic: param-study-siaE
+    icedynamic: default
     time: 50k-out100
     n_procs: 4
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
