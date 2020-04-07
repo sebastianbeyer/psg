@@ -31,6 +31,15 @@ def listCmd(args):
         exps.print_overview()
        # print(exps)
 
+
+def rsync_command(args):
+    import subprocess
+    experiment = args.experiment
+    source = "k19:/work/sbeyer/psg/experiments/" + experiment + "/*.nc"
+    destination = os.path.join(paths.exp_envs_path, experiment)
+    subprocess.call(["rsync", "--progress", "-avzh", source, destination])
+    # rsync --progress -avzh k19:/work/sbeyer/psg/experiments/LGM-NHEM-40km-constant-siaEtuning/ts_LGM-NHEM-40km-constant-siaEtuning_sia_e_3.nc .
+
 def generate_command(args):
     # load the fragments from the experiment spec
     exp = exps.get_spec(args.exp)
@@ -59,6 +68,10 @@ parser_list.set_defaults(func=listCmd)
 parser_generate = subparsers.add_parser('generate')
 parser_generate.add_argument('exp')
 parser_generate.set_defaults(func=generate_command)
+
+parser_rsync = subparsers.add_parser('rsync')
+parser_rsync.add_argument('experiment')
+parser_rsync.set_defaults(func=rsync_command)
 
 args = parser.parse_args()
 args.func(args)
