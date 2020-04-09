@@ -18,18 +18,18 @@
 
 - time:
     spec: test-oneyear
-    ys: -1
-    ye: 0
-    ts_times: '-1:daily:0'
-    extra_times: '-1:monthly:0'
+    ys: 0
+    ye: 1
+    ts_times: '0:daily:1'
+    extra_times: '0:monthly:1'
     test_climate_models: yes
     no_mass: yes
 
 - time:
     spec: test-threeyear
-    ys: -3
-    ye: 0
-    ts_times: '-3:daily:0'
-    extra_times: '-3:monthly:0'
+    ys: 0
+    ye: 3
+    ts_times: '0:daily:3'
+    extra_times: '0:monthly:3'
     test_climate_models: yes
     no_mass: yes
