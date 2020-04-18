@@ -6,8 +6,8 @@
     spec: 120k-out100
     ys: -120000
     ye: 0
-    ts_times: '-120000:10:0'
-    extra_times: '-120000:100:0'
+    ts_times: '10'
+    extra_times: '100'
 
 - time:
     spec: 50k-out100
