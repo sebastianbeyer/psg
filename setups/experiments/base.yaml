@@ -35,6 +35,20 @@
     n_procs: 4
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
 
+
+- exp:
+    spec: NHEM-40km-PD-constantspinup-50k
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_00ka_NHEM_40km.nc
+    bootstrap: yes
+    grid: NHEM-40
+    ocean: normal
+    climate: pdd-std
+    icedynamic: bestfit-40km
+    time: 50k-out100
+    n_procs: 32
+    config_override: /work/sbeyer/PISM_runs/pism_config.nc
+
+
 - exp:
     spec: NHEM-40km-transient-120k
     netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_21ka_NHEM_40km.nc
