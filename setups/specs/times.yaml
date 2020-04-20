@@ -13,8 +13,8 @@
     spec: 50k-out100
     ys: -50000
     ye: 0
-    ts_times: '-50000:10:0'
-    extra_times: '-50000:100:0'
+    ts_times: '10'
+    extra_times: '100'
 
 - time:
     spec: test-oneyear
