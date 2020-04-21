@@ -17,7 +17,7 @@
     bootstrap: yes
     grid: NHEM-40
     ocean: normal
-    climate: pdd-std-with-sd
+    climate: pdd-std-with-sd-21ka
     icedynamic: param-study-siaE
     time: 50k-out100
     n_procs: 32
@@ -29,7 +29,7 @@
     bootstrap: yes
     grid: NHEM-40
     ocean: normal
-    climate: pdd-std-with-sd
+    climate: pdd-std-with-sd-21ka
     icedynamic: default
     time: test-threeyear
     n_procs: 4
@@ -42,7 +42,7 @@
     bootstrap: yes
     grid: NHEM-40
     ocean: normal
-    climate: pdd-std
+    climate: pdd-std-00ka
     icedynamic: bestfit-40km
     time: 50k-out100
     n_procs: 32
