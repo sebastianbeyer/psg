@@ -51,7 +51,7 @@
 
 - exp:
     spec: NHEM-40km-transient-120k
-    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_21ka_NHEM_40km.nc
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_00ka_NHEM_40km.nc
     bootstrap: yes
     grid: NHEM-40
     ocean: normal
