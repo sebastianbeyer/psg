@@ -35,7 +35,12 @@ def listCmd(args):
 def rsync_command(args):
     import subprocess
     experiment = args.experiment
-    source = "k19:/work/sbeyer/psg/experiments/" + experiment + "/*.nc"
+    remote = args.remote
+    if remote == 'cluster':
+        path = '/home/sbeyer'
+    else:
+        path = '/work/sbeyer'
+    source = remote + ":"+path+"/psg/experiments/" + experiment + "/*.nc"
     destination = os.path.join(paths.exp_envs_path, experiment)
     subprocess.call(["rsync", "--progress", "-avzh", source, destination])
     # rsync --progress -avzh k19:/work/sbeyer/psg/experiments/LGM-NHEM-40km-constant-siaEtuning/ts_LGM-NHEM-40km-constant-siaEtuning_sia_e_3.nc .
@@ -71,6 +76,7 @@ parser_generate.set_defaults(func=generate_command)
 
 parser_rsync = subparsers.add_parser('rsync')
 parser_rsync.add_argument('experiment')
+parser_rsync.add_argument('--remote', default='k19', choices=['k19','cluster'])
 parser_rsync.set_defaults(func=rsync_command)
 
 args = parser.parse_args()
