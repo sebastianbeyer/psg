@@ -69,6 +69,7 @@ imgThk = axThk.imshow(thk_last,
                         transform=crs,
                         extent=[-6240000, 6240000, -6240000, 6240000],
                         cmap=cmap,
+                        origin='lower',
                         vmin=0,
                         vmax=5000)
 cbThk = plt.colorbar(imgThk, ax=axThk, shrink=0.8)
@@ -80,6 +81,7 @@ imgDiff = axDiff1.imshow(thk_diff,
                         transform=crs,
                         extent=[-6240000, 6240000, -6240000, 6240000],
                         cmap=cmap_diff,
+                        origin='lower',
                         vmin=-2000,
                         vmax=2000)
 cbDiff = plt.colorbar(imgDiff, ax=axDiff1, shrink=0.8)
@@ -91,6 +93,7 @@ imgDiffPerc= axDiffPerc.imshow(thk_diffperc,
                         transform=crs,
                         extent=[-6240000, 6240000, -6240000, 6240000],
                         cmap=cmap_diff,
+                        origin='lower',
                         vmin=-1,
                         vmax=1)
 cbDiffPerc = plt.colorbar(imgDiffPerc, ax=axDiffPerc, shrink=0.8)
