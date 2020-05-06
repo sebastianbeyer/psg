@@ -50,9 +50,9 @@
     
 - exp:
     spec: test-SMB-CESM-00ka
-    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_00ka_NHEM_40km.nc
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_00ka_NHEM_20km.nc
     bootstrap: yes
-    grid: NHEM-40
+    grid: NHEM-20
     ocean: normal
     climate: pdd-std-00ka
     icedynamic: bestfit-40km
