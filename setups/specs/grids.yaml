@@ -11,11 +11,11 @@
     periodicity: none
     
 - grid:
-    spec: NHEM-20
+    spec: NHEM-20-100vert
     Mx: 625
     My: 625
-    Mz: 201
-    Mbz: 21
+    Mz: 101
+    Mbz: 11
     z_spacing: equal
     Lz: 8000
     Lbz: 2000
