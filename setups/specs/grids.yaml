@@ -9,6 +9,18 @@
     Lbz: 2000
     grid.recompute_longitude_and_latitude: false
     periodicity: none
+    
+- grid:
+    spec: NHEM-20
+    Mx: 625
+    My: 625
+    Mz: 201
+    Mbz: 21
+    z_spacing: equal
+    Lz: 8000
+    Lbz: 2000
+    grid.recompute_longitude_and_latitude: false
+    periodicity: none
 
 - grid:
     spec: GRN-40
