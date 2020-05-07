@@ -61,6 +61,18 @@
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
     
 - exp:
+    spec: NHEM-40km-ERA5-00ka-constantspinup-50k
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/era5/ERA5_NHEM_40km.nc
+    bootstrap: yes
+    grid: NHEM-40
+    ocean: normal
+    climate: pdd-std-00ka-era5-40km
+    icedynamic: bestfit-40km
+    time: 50k-out100
+    n_procs: 32
+    config_override: /work/sbeyer/PISM_runs/pism_config.nc
+    
+- exp:
     spec: test-SMB-CESM-00ka
     netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_00ka_NHEM_20km.nc
     bootstrap: yes
@@ -78,7 +90,7 @@
     bootstrap: yes
     grid: NHEM-20-100vert
     ocean: normal
-    climate: pdd-std-00ka-era5
+    climate: pdd-std-00ka-era5-20km
     icedynamic: bestfit-40km
     time: test-oneyear
     n_procs: 4
