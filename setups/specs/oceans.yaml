@@ -27,3 +27,11 @@
     front_retreat_file: /mnt/wrk4/sbeyer/datasets/oceankillmask/NHEM_ocean_kill_40km.nc
     ocean: pik
     meltfactor_pik: 0.01
+    
+- ocean:
+    spec: hot
+    calving: eigen_calving,thickness_calving
+    thickness_calving_threshold: 200
+    front_retreat_file: /mnt/wrk4/sbeyer/datasets/oceankillmask/NHEM_ocean_kill_40km.nc
+    ocean: pik
+    meltfactor_pik: 10
