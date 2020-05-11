@@ -67,7 +67,7 @@
     grid: NHEM-40
     ocean: hot
     climate: pdd-std-00ka-era5-40km
-    icedynamic: bestfit-40km
+    icedynamic: niu2019
     time: 10k-out10
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
