@@ -68,7 +68,7 @@
     ocean: normal
     climate: pdd-std-00ka-era5-40km
     icedynamic: bestfit-40km
-    time: 50k-out100
+    time: 500-out1
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
     
