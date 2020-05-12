@@ -30,8 +30,6 @@
     
 - ocean:
     spec: hot
-    calving: eigen_calving,thickness_calving
-    thickness_calving_threshold: 200
     front_retreat_file: /mnt/wrk4/sbeyer/datasets/oceankillmask/NHEM_ocean_kill_40km.nc
-    ocean: pik
-    meltfactor_pik: 10
+    ocean: constant
+    shelf_base_melt_rate: 10000
