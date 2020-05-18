@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 import paths
 
+
 class ExperimentEnvironment():
     """
     The environment (folder) for an experiment
@@ -20,8 +21,3 @@ class ExperimentEnvironment():
         exppath = os.path.join(paths.exp_envs_path, self.name)
         Path(exppath).mkdir(parents=True, exist_ok=True)
         return os.path.join(paths.exp_envs_path, self.name)
-
-
-
-
-
