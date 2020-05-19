@@ -120,3 +120,15 @@
     time: 120k-out100
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
+    
+- exp:
+    spec: GRN-40km-ERA5-00ka-constantspinup-50k
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/era5/ERA5_GRN_40km.nc
+    bootstrap: yes
+    grid: GRN-40
+    ocean: normal
+    climate: pdd-std-00ka-era5-40km
+    icedynamic: niu2019
+    time: 50k-out100
+    n_procs: 32
+    config_override: /work/sbeyer/PISM_runs/pism_config.nc
