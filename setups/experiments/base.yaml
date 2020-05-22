@@ -126,7 +126,7 @@
     netcdf_input: /mnt/wrk4/sbeyer/datasets/era5/ERA5_GRN_40km.nc
     bootstrap: yes
     grid: GRN-40
-    ocean: constantmelt_25
+    ocean: constantmelt_50
     climate: pdd-std-00ka-era5-40km
     icedynamic: niu2019
     time: 50k-out100

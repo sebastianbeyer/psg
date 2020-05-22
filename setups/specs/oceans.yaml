@@ -35,9 +35,9 @@
     shelf_base_melt_rate: 10000
     
 - ocean:
-    spec: constantmelt_25
+    spec: constantmelt_50
     calving: eigen_calving,thickness_calving
     thickness_calving_threshold: 200
     front_retreat_file: /mnt/wrk4/sbeyer/datasets/oceankillmask/NHEM_ocean_kill_40km.nc
     ocean: constant
-    shelf_base_melt_rate: 25
+    shelf_base_melt_rate: 50
