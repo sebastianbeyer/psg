@@ -1,6 +1,6 @@
 - icedynamic:
     spec: default
-    stressBalance: ssa+sia
+    stress_balance: ssa+sia
     tauc_slippery_grounding_lines: yes
     topg_to_phi: 5,40,-700,700
 
