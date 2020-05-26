@@ -128,7 +128,7 @@
     grid: GRN-40
     ocean: constantmelt_50
     climate: pdd-std-00ka-era5-40km
-    icedynamic: niu2019
+    icedynamic: hindcasting
     time: 50k-out100-more
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc

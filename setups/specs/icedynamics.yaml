@@ -19,7 +19,8 @@
     ssa_e: 1
     pseudo_plastic: yes
     pseudo_plastic_q: 0.25
-    till_effective_fraction_overburden: 0.95
+    # no direct relation, because older version of pism
+    till_effective_fraction_overburden: 0.05 
 
 - icedynamic:
     spec: nature-highres
