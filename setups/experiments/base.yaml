@@ -19,7 +19,7 @@
     ocean: normal
     climate: pdd-std-with-sd-21ka
     icedynamic: param-study-siaE
-    time: 50k-out100
+    time: 50k-out100-more
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
     
