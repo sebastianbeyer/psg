@@ -35,6 +35,18 @@
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
     
+- exp:
+    spec: PI-NHEM-40km-constant-CESM-CAM5
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_CAM5_PI_NHEM_40km.nc
+    bootstrap: yes
+    grid: NHEM-40
+    ocean: normal
+    climate: pdd-std-PI-CAM5
+    icedynamic: siae3-q.6
+    time: 50k-out100-more
+    n_procs: 32
+    config_override: /work/sbeyer/PISM_runs/pism_config.nc
+    
     
 - exp:
     spec: PD-NHEM-40km-constant-siaEtuning
