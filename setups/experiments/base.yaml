@@ -30,7 +30,19 @@
     grid: NHEM-40
     ocean: normal
     climate: pdd-std-21ka-CAM5
-    icedynamic: siae3-q.6
+    icedynamic: siae3-q.4
+    time: 50k-out100-more
+    n_procs: 32
+    config_override: /work/sbeyer/PISM_runs/pism_config.nc
+
+- exp:
+    spec: LGM-NHEM-40km-constant-CESM-CAM4_CN
+    netcdf_input: /mnt/wrk4/sbeyer/datasets/cesm/CESM_CAM4_CN_21ka_NHEM_40km.nc
+    bootstrap: yes
+    grid: NHEM-40
+    ocean: normal
+    climate: pdd-std-21ka-CAM4_CN
+    icedynamic: siae3-q.4
     time: 50k-out100-more
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc
@@ -42,7 +54,7 @@
     grid: NHEM-40
     ocean: normal
     climate: pdd-std-PI-CAM5
-    icedynamic: siae3-q.6
+    icedynamic: siae3-q.4
     time: 50k-out100-more
     n_procs: 32
     config_override: /work/sbeyer/PISM_runs/pism_config.nc

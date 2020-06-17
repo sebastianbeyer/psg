@@ -31,11 +31,11 @@
     till_effective_fraction_overburden: 0.02
     
 - icedynamic:
-    spec: siae3-q.6
+    spec: siae3-q.4
     sia_e: 3
     ssa_e: 1
     pseudo_plastic: yes
-    pseudo_plastic_q: 0.6
+    pseudo_plastic_q: 0.4
     till_effective_fraction_overburden: 0.02
 
 - icedynamic:
