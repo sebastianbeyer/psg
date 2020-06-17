@@ -3,12 +3,13 @@
     stress_balance: ssa+sia
     tauc_slippery_grounding_lines: yes
     topg_to_phi: 5,40,-700,700
+    pseudo_plastic: yes
+    till_effective_fraction_overburden: 0.02
 
 - icedynamic:
     spec: niu2019
     sia_e: 5
     ssa_e: 1
-    pseudo_plastic: yes
     pseudo_plastic_q: 0.1
     till_effective_fraction_overburden: 0.01
     hydrology_tillwat_max: 1
@@ -17,7 +18,6 @@
     spec: hindcasting
     sia_e: 3
     ssa_e: 1
-    pseudo_plastic: yes
     pseudo_plastic_q: 0.25
     # no direct relation, because older version of pism
     till_effective_fraction_overburden: 0.05 
@@ -26,39 +26,29 @@
     spec: nature-highres
     sia_e: 1.25
     ssa_e: 1
-    pseudo_plastic: yes
     pseudo_plastic_q: 0.6
-    till_effective_fraction_overburden: 0.02
     
 - icedynamic:
     spec: siae3-q.4
     sia_e: 3
     ssa_e: 1
-    pseudo_plastic: yes
     pseudo_plastic_q: 0.4
-    till_effective_fraction_overburden: 0.02
 
 - icedynamic:
     spec: param-study-siaE
     sia_e: [ 1, 2, 3, 4.5, 7 ]
     ssa_e: 1
-    pseudo_plastic: yes
     pseudo_plastic_q: 0.25
-    till_effective_fraction_overburden: 0.02
     
 - icedynamic:
     spec: param-study-q
     sia_e: 3
     ssa_e:  1
-    pseudo_plastic: yes
     pseudo_plastic_q: [0.1, 0.25, 0.33, 0.5, 0.6, 0.7, 0.8 ]
-    till_effective_fraction_overburden: 0.02
 
 - icedynamic:
     spec: bestfit-40km
     sia_e: 3
     ssa_e: 1
-    pseudo_plastic: yes
     pseudo_plastic_q: 0.25
-    till_effective_fraction_overburden: 0.02
 
