@@ -18,11 +18,20 @@ parser.add_argument('--mask',
                     help="mask file for greenland",
                     default='none',
                     type=str)
+parser.add_argument('--velo',
+                    help="observed velocity field",
+                    default='none',
+                    type=str)
 args = parser.parse_args()
 
 directory = os.fsencode(args.directory)
 
 fig, (ax) = plt.subplots(1, 1, sharey=False, figsize=(6, 6))
+
+if args.velo != "none":
+    data = Dataset(args.velo, mode='r')
+    vel_obs = data.variables['vv'][:]
+    data.close()
 
 fileList = os.listdir(directory)
 fileList = natsort.natsorted(fileList, alg=natsort.ns.IGNORECASE)
@@ -47,6 +56,8 @@ for file in fileList:
         target_thk = thk[0, :, :]
         model_thk = thk[-1, :, :]
 
+        vel_model = vel[-1, :, :]
+
         icemass = []
         iceVolume = []
         for i in range(nTimesteps):
@@ -54,12 +65,20 @@ for file in fileList:
             iceVolume.append(np.sum(thk[i, :, :]) * dx * dx)
 
         iceVolume = np.array(iceVolume) / 1e15
-        # ax.plot(iceVolume, label=str(varValue))
-        ax.plot(target_thk.flatten(),
-                model_thk.flatten(),
-                'o',
-                alpha=0.5,
-                label=str(varValue))
+        ax.plot(iceVolume, label=str(varValue))
+        # ax.plot(target_thk.flatten(),
+        #         model_thk.flatten(),
+        #         'o',
+        #         alpha=0.5,
+        #         label=str(varValue))
+
+        # ax.plot(vel_obs.flatten(),
+        #         vel_model.flatten(),
+        #         'o',
+        #         alpha=0.5,
+        #         label=str(varValue))
+# ax.set_xlim([50, 600])
+# ax.set_ylim([50, 600])
 
 ax.axhline(y=2.93)  # this is from RACMO2 maybe?
 # ax.set_ylabel('Ice volume (Mio km^2)')
