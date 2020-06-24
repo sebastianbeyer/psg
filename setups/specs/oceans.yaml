@@ -41,3 +41,12 @@
     front_retreat_file: /mnt/wrk4/sbeyer/datasets/oceankillmask/NHEM_ocean_kill_40km.nc
     ocean: constant
     shelf_base_melt_rate: 50
+    
+-ocean:
+    spec: thermodynamics
+    calving: eigen_calving,thickness_calving
+    thickness_calving_threshold: 200
+    front_retreat_file: /mnt/wrk4/sbeyer/datasets/oceankillmask/NHEM_ocean_kill_40km.nc
+    ocean: th
+    ocean_th_file: /mnt/wrk4/sbeyer/datasets/cesm/CESM_CAM5_PI_NHEM_40km.nc
+    
