@@ -42,7 +42,7 @@
     ocean: constant
     shelf_base_melt_rate: 50
     
--ocean:
+- ocean:
     spec: thermodynamics
     calving: eigen_calving,thickness_calving
     thickness_calving_threshold: 200
